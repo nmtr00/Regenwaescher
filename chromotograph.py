@@ -9,7 +9,7 @@ date = ''
 args = parser.parse_args()
 date = args.date
 
-log_file_path = "D:\Dev\EONERC\Regenwaescher\data.log"
+log_file_path = "data.log"
 with open(log_file_path, 'r') as file:
     log_data = file.read()
 
@@ -39,5 +39,5 @@ df['Date'] = df['Date'].dt.strftime('%Y%m%d')
 df_evaluated = df[df['Date'] == date]
 csv_name = f'{date}.csv'
 df_evaluated.to_csv(csv_name, index=False)
-print("DataFrame filtered successfully, and saved to log_data_dataframe_filtered.csv:")
+print("DataFrame filtered successfully, and saved")
 print(df_evaluated)
