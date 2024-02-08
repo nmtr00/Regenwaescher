@@ -38,6 +38,6 @@ df['Date'] = pd.to_datetime(df['Date'], format='%m/%d/%Y')
 df['Date'] = df['Date'].dt.strftime('%Y%m%d')
 df_evaluated = df[df['Date'] == date]
 csv_name = f'{date}.csv'
-df_evaluated.to_csv(csv_name, index=False)
+df_evaluated.to_csv(f'.\Chromatograph_Messungsen\{csv_name}', index=False)
 print("DataFrame filtered successfully, and saved")
 print(df_evaluated)
