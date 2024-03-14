@@ -9,7 +9,7 @@ date = ''
 args = parser.parse_args()
 date = args.date
 
-log_file_path = ".\emerson_xe\logs\data.log"
+log_file_path = ".\current\data.log"
 # Add error handling for parsing and data manipulation steps as well.
 try:
     with open(log_file_path, 'r') as file:
@@ -41,7 +41,7 @@ df['Date'] = pd.to_datetime(df['Date'], format='%m/%d/%Y')
 #reformat 'date column to yymmdd
 df['Date'] = df['Date'].dt.strftime('%Y%m%d')
 
-output_directory = "./Chromatograph_Messungsen"
+output_directory = ".\current"
 if not os.path.exists(output_directory):
     os.makedirs(output_directory)
 
