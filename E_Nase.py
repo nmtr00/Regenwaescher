@@ -1,6 +1,6 @@
 import pandas as pd
 import re
-
+import os
 
 class ENase:
     def __init__(self, data_file):
@@ -8,6 +8,7 @@ class ENase:
         self.df = None
 
     def csv(self):
+        file_name = os.path.splitext(os.path.basename(self.data))[0]
         list = []
         read_file = open(self.data)
         line = read_file.readline()
@@ -41,18 +42,21 @@ class ENase:
                 data_dict.append({
                     'Date': date.replace('-',''),
                     'Time': time,
-                    'MQ2.SV': mq2_sv,
-                    'MQ3.SV': mq3_sv,
-                    'MQ9B.SV': mq9b_sv,
-                    'MQ135.SV': mq135_sv,
-                    'MP503.SV': mp503_sv,
-                    'HCOH.SV': hcoh_sv
+                    f'MQ2.SV {file_name}': mq2_sv,
+                    f'MQ3.SV {file_name}': mq3_sv,
+                    f'MQ9B.SV {file_name}': mq9b_sv,
+                    f'MQ135.SV {file_name}': mq135_sv,
+                    f'MP503.SV {file_name}': mp503_sv,
+                    f'HCOH.SV {file_name}': hcoh_sv
                 })
 
         # Converting list of dictionaries to DataFrame
         self.df = pd.DataFrame(data_dict)
+        csv_file_path = f'.\csv\{file_name}.csv'
+        self.df.to_csv(csv_file_path, index=False)
 
 vorne_sensor = ENase('.\Vorne.txt')
 vorne_sensor.csv()
 hinten_sensor = ENase('.\Hinten.txt')
 hinten_sensor.csv()
+

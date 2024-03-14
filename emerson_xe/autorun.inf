@@ -1,0 +1,21 @@
+.-------------------------------------------------------------------
+EMERSON X-STREAM XE | USB-AUTORUN File 
+.-------------------------------------------------------------------
+
+Activate a procedure by removing # from only ONE line below.
+
+# SAVE_CONFIG     - Save current configuration to USB
+# SAVE_FIRMWARE   - Save Firmware (incl. config) to USB
+# SAVE_DATALOGS   - Save Data Logger files to USB
+# SAVE_EVENTLOGS  - Save Event Logger files to USB
+#
+# LOAD_FIRMWARE   - Load complete firmware
+# LOAD_PROGRAM    - Load Program files only
+# LOAD_WEB        - Load Web files only
+# LOAD_HELP       - Load Help files only
+#
+# SET_PASSWORDS   - Set Passwords to defaults
+
+After execution, the content of this files will be replaced
+by the default content.
+.-------------------------------------------------------------------

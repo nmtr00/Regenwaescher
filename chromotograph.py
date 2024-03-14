@@ -9,7 +9,7 @@ date = ''
 args = parser.parse_args()
 date = args.date
 
-log_file_path = "data.log"
+log_file_path = ".\emerson_xe\logs\data.log"
 # Add error handling for parsing and data manipulation steps as well.
 try:
     with open(log_file_path, 'r') as file:
