@@ -52,11 +52,11 @@ class ENase:
 
         # Converting list of dictionaries to DataFrame
         self.df = pd.DataFrame(data_dict)
-        csv_file_path = f'.\csv\{file_name}.csv'
+        csv_file_path = f'.\current\{file_name}.csv'
         self.df.to_csv(csv_file_path, index=False)
 
-vorne_sensor = ENase('.\Vorne.txt')
+vorne_sensor = ENase('.\current\/vorne.txt')
 vorne_sensor.csv()
-hinten_sensor = ENase('.\Hinten.txt')
+hinten_sensor = ENase(".\current\hinten.txt")
 hinten_sensor.csv()
 
